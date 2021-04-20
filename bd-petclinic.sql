@@ -111,6 +111,8 @@ CREATE TABLE `persona` (
   `segundo_nombre` varchar(45) DEFAULT NULL,
   `primer_apellido` varchar(45) DEFAULT NULL,
   `segundo_apellido` varchar(45) DEFAULT NULL,
+  `rol_usuario` varchar(45) DEFAULT NULL,
+  `contraseña_usuario` varchar(45) DEFAULT NULL,
   `direccion` varchar(45) DEFAULT NULL,
   `telefono` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
@@ -195,4 +197,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-16 16:40:23
+-- Dump completed on 2021-04-19 19:18:53
