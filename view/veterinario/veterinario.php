@@ -7,8 +7,8 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th style="width:100px;">id Persona</th>
             <th style="width:120px;">id Veterinario</th>
+            <th style="width:100px;">id Persona</th>
             <th style="width:120px;">Nombre</th>
             <th style="width:120px;">Apellido</th>
             <th>Email</th>
@@ -20,8 +20,8 @@
     <tbody>
     <?php foreach($this->model->Listar() as $r): ?>
         <tr>
-            <td><?php echo $r->id_persona; ?></td>
             <td><?php echo $r->id_veterinario; ?></td>
+            <td><?php echo $r->id_persona; ?></td>
             <td><?php echo $r->nombre; ?></td>
             <td><?php echo $r->apellido; ?></td>
             <td><?php echo $r->email; ?></td>
