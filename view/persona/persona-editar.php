@@ -1,5 +1,5 @@
 <h1 class="page-header">
-    <?php echo $var->id_persona != null ? $var->Nombre : 'Nuevo Registro'; ?>
+    <?php echo $var->id_persona != null ? $var->nombre : 'Nuevo Registro'; ?>
 </h1>
 
 <ol class="breadcrumb">

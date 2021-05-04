@@ -7,12 +7,13 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th style="width:180px;">C.C</th>
-            <th style="width:180px;">Nombre</th>
-            <th>Apellido</th>
+            <th style="width:180px;">id Persona</th>
+            <th style="width:120px;">C.C</th>
+            <th style="width:120px;">Nombre</th>
+            <th style="width:120px;">Apellido</th>
             <th style="width:120px;">Sexo</th>
             <th style="width:120px;">Nacimiento</th>
-            <th style="width:120px;">Direccion</th>
+            <th style="width:180px;">Direccion</th>
             <th style="width:120px;">Telefono</th>
             <th>Email</th>
             <th style="width:60px;"></th>
@@ -22,6 +23,7 @@
     <tbody>
     <?php foreach($this->model->Listar() as $r): ?>
         <tr>
+            <td><?php echo $r->id_persona; ?></td>
             <td><?php echo $r->cc; ?></td>
             <td><?php echo $r->nombre; ?></td>
             <td><?php echo $r->apellido; ?></td>

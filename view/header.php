@@ -33,7 +33,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entidades <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="index.php">Personas</a></li>
-                    <li><a href="#">Veterinarios</a></li>
+                    <li><a href="index_1.php">Veterinarios</a></li>
                     <li><a href="#">Propietarios</a></li>
                     <li><a href="#">Mascotas</a></li>
                     <li><a href="#">Historial</a></li>
