@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<title>Crud-PHP</title>
+		<title>Crud-PetClinic</title>
         
         <meta charset="utf-8" />
         
@@ -23,7 +23,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">PHP-Crud</a>
+              <a class="navbar-brand" href="#">PetClinic-Crud</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -32,9 +32,11 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entidades <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="index.php">Alumnos</a></li>
-                    <li><a href="index_1.php">Profesores</a></li>
-                    <li><a href="index_2.php">Cursos</a></li>
+                    <li><a href="index.php">Personas</a></li>
+                    <li><a href="#">Veterinarios</a></li>
+                    <li><a href="#">Propietarios</a></li>
+                    <li><a href="#">Mascotas</a></li>
+                    <li><a href="#">Historial</a></li>
                   </ul>
                 </li>
               </ul>
