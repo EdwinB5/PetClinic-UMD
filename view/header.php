@@ -34,8 +34,8 @@
                   <ul class="dropdown-menu">
                     <li><a href="index.php">Personas</a></li>
                     <li><a href="index_1.php">Veterinarios</a></li>
-                    <li><a href="#">Propietarios</a></li>
-                    <li><a href="#">Mascotas</a></li>
+                    <li><a href="index_2.php">Mascotas</a></li>
+                    <li><a href="index_3.php">Propietarios</a></li>
                     <li><a href="#">Historial</a></li>
                   </ul>
                 </li>

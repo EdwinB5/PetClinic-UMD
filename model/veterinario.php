@@ -100,17 +100,18 @@ class Veterinario
 	{
 		try 
 		{
-		$sql = "INSERT INTO veterinarios (id_persona,especialidad,fechaRegistro) 
-		        VALUES (?,?,?)";
-		$this->pdo->prepare($sql)
-		     ->execute(
-				array(
-					$data->id_persona,
-                    $data->especialidad,
-                    date('Y-m-d')
-                )
-			);
-		} catch (Exception $e) 
+			$sql = "INSERT INTO veterinarios (id_persona,especialidad,fechaRegistro) 
+		        	VALUES (?,?,?)";
+			$this->pdo->prepare($sql)
+		    	 ->execute(
+					array(
+						$data->id_persona,
+                    	$data->especialidad,
+                    	date('Y-m-d')
+                	)
+				);
+		} 
+		catch (Exception $e) 
 		{
 			die($e->getMessage());
 		}

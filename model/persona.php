@@ -115,24 +115,25 @@ class Persona
 	{
 		try 
 		{
-		$sql = "INSERT INTO personas (cc,nombre,apellido,sexo,fechaNacimiento,direccion,telefono,email,fechaRegistro) 
-		        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+			$sql = "INSERT INTO personas (cc,nombre,apellido,sexo,fechaNacimiento,direccion,telefono,email,fechaRegistro) 
+			        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
-		$this->pdo->prepare($sql)
-		     ->execute(
-				array(
-                    $data->cc,
-                    $data->nombre,
-                    $data->apellido, 
-                    $data->sexo, 
-                    $data->fechaNacimiento,
-                    $data->direccion,
-                    $data->telefono,
-                    $data->email,
-                    date('Y-m-d')
-                )
-			);
-		} catch (Exception $e) 
+			$this->pdo->prepare($sql)
+			     ->execute(
+					array(
+	                    $data->cc,
+	                    $data->nombre,
+	                    $data->apellido, 
+	                    $data->sexo, 
+	                    $data->fechaNacimiento,
+	                    $data->direccion,
+	                    $data->telefono,
+	                    $data->email,
+	                    date('Y-m-d')
+	                )
+				);
+		} 
+		catch (Exception $e) 
 		{
 			die($e->getMessage());
 		}

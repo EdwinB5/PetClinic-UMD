@@ -13,7 +13,7 @@
             <th style="width:120px;">Apellido</th>
             <th style="width:120px;">Sexo</th>
             <th style="width:120px;">Nacimiento</th>
-            <th style="width:180px;">Direccion</th>
+            <th style="width:200px;">Direccion</th>
             <th style="width:120px;">Telefono</th>
             <th>Email</th>
             <th style="width:60px;"></th>
