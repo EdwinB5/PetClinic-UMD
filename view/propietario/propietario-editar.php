@@ -1,10 +1,10 @@
 <h1 class="page-header">
-    <?php echo $var->id_propietario != null ? $var->apellido : 'Nuevo Registro'; ?>
+    <?php echo $var->id_propietario != null ? $var->apellido : 'Nuevo Propietario'; ?>
 </h1>
 
 <ol class="breadcrumb">
   <li><a href="?c=Propietario">Propietarios</a></li>
-  <li class="active"><?php echo $var->id_propietario != null ? $var->apellido : 'Nuevo Registro'; ?></li>
+  <li class="active"><?php echo $var->id_propietario != null ? $var->apellido : 'Nuevo Propietario'; ?></li>
 </ol>
 
 <form id="frm-veterinario" action="?c=Propietario&a=Guardar" method="post" enctype="multipart/form-data">

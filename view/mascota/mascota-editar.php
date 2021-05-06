@@ -1,10 +1,10 @@
 <h1 class="page-header">
-    <?php echo $var->id_mascota != null ? $var->nombre : 'Nuevo Registro'; ?>
+    <?php echo $var->id_mascota != null ? $var->nombre : 'Nueva Mascota'; ?>
 </h1>
 
 <ol class="breadcrumb">
   <li><a href="?c=Mascota">Mascotas</a></li>
-  <li class="active"><?php echo $var->id_mascota != null ? $var->nombre : 'Nuevo Registro'; ?></li>
+  <li class="active"><?php echo $var->id_mascota != null ? $var->nombre : 'Nueva Mascota'; ?></li>
 </ol>
 
 <form id="frm-mascota" action="?c=Mascota&a=Guardar" method="post" enctype="multipart/form-data">
