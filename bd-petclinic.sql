@@ -1,4 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `petclinic` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+CREATE DATABASE  IF NOT EXISTS `petclinic` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
 USE `petclinic`;
 -- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
@@ -25,51 +25,38 @@ DROP TABLE IF EXISTS `historial_visita_mascota`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `historial_visita_mascota` (
+  `id_visita` int(11) NOT NULL AUTO_INCREMENT,
   `id_mascota` int(11) NOT NULL,
   `id_veterinario` int(11) NOT NULL,
-  `fecha` date DEFAULT NULL,
+  `fechaVisita` varchar(20) DEFAULT NULL,
   `descripcion` varchar(100) DEFAULT NULL,
-  PRIMARY KEY (`id_mascota`,`id_veterinario`),
+  `fechaRegistro` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_visita`,`id_mascota`,`id_veterinario`),
   KEY `id_veterinario` (`id_veterinario`),
-  CONSTRAINT `historial_visita_mascota_ibfk_1` FOREIGN KEY (`id_mascota`) REFERENCES `mascota` (`id_mascota`),
-  CONSTRAINT `historial_visita_mascota_ibfk_2` FOREIGN KEY (`id_veterinario`) REFERENCES `veterinario` (`id_persona`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  KEY `id_mascota` (`id_mascota`),
+  CONSTRAINT `historial_visita_mascota_ibfk_1` FOREIGN KEY (`id_veterinario`) REFERENCES `veterinarios` (`id_veterinario`),
+  CONSTRAINT `historial_visita_mascota_ibfk_2` FOREIGN KEY (`id_mascota`) REFERENCES `mascotas` (`id_mascota`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `historial_visita_mascota`
+-- Table structure for table `mascotas`
 --
 
-LOCK TABLES `historial_visita_mascota` WRITE;
-/*!40000 ALTER TABLE `historial_visita_mascota` DISABLE KEYS */;
-/*!40000 ALTER TABLE `historial_visita_mascota` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `mascota`
---
-
-DROP TABLE IF EXISTS `mascota`;
+DROP TABLE IF EXISTS `mascotas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `mascota` (
-  `id_mascota` int(11) NOT NULL,
+CREATE TABLE `mascotas` (
+  `id_mascota` int(11) NOT NULL AUTO_INCREMENT,
   `nombre` varchar(45) DEFAULT NULL,
-  `fecha_nacimiento` varchar(45) DEFAULT NULL,
+  `sexo` tinyint(4) DEFAULT NULL,
+  `fechaNacimiento` varchar(20) DEFAULT NULL,
   `tipo` varchar(45) DEFAULT NULL,
   `especie` varchar(45) DEFAULT NULL,
+  `fechaRegistro` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id_mascota`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `mascota`
---
-
-LOCK TABLES `mascota` WRITE;
-/*!40000 ALTER TABLE `mascota` DISABLE KEYS */;
-/*!40000 ALTER TABLE `mascota` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Table structure for table `permisos`
@@ -84,101 +71,72 @@ CREATE TABLE `permisos` (
   `escritura_w` tinyint(4) DEFAULT NULL,
   `ejecucion_x` tinyint(4) DEFAULT NULL,
   PRIMARY KEY (`id_persona`),
-  CONSTRAINT `FK_idPersona` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id_persona`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `permisos_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id_persona`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `permisos`
+-- Table structure for table `personas`
 --
 
-LOCK TABLES `permisos` WRITE;
-/*!40000 ALTER TABLE `permisos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `permisos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `persona`
---
-
-DROP TABLE IF EXISTS `persona`;
+DROP TABLE IF EXISTS `personas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `persona` (
-  `id_persona` int(11) NOT NULL,
-  `c.c` varchar(45) DEFAULT NULL,
-  `primer_nombre` varchar(45) DEFAULT NULL,
-  `segundo_nombre` varchar(45) DEFAULT NULL,
-  `primer_apellido` varchar(45) DEFAULT NULL,
-  `segundo_apellido` varchar(45) DEFAULT NULL,
-  `rol_usuario` varchar(45) DEFAULT NULL,
-  `contraseña_usuario` varchar(45) DEFAULT NULL,
+CREATE TABLE `personas` (
+  `id_persona` int(11) NOT NULL AUTO_INCREMENT,
+  `cc` varchar(25) DEFAULT NULL,
+  `nombre` varchar(50) DEFAULT NULL,
+  `apellido` varchar(50) DEFAULT NULL,
+  `sexo` tinyint(4) DEFAULT NULL,
+  `fechaNacimiento` varchar(20) DEFAULT NULL,
   `direccion` varchar(45) DEFAULT NULL,
   `telefono` varchar(45) DEFAULT NULL,
   `email` varchar(45) DEFAULT NULL,
-  `tipo` varchar(45) DEFAULT NULL,
+  `rolUsuario` varchar(45) DEFAULT NULL,
+  `contraseñaUsuario` varchar(45) DEFAULT NULL,
+  `tipoUsuario` varchar(45) DEFAULT NULL,
+  `fechaRegistro` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id_persona`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `persona`
+-- Table structure for table `propietarios`
 --
 
-LOCK TABLES `persona` WRITE;
-/*!40000 ALTER TABLE `persona` DISABLE KEYS */;
-/*!40000 ALTER TABLE `persona` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `propietario`
---
-
-DROP TABLE IF EXISTS `propietario`;
+DROP TABLE IF EXISTS `propietarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `propietario` (
+CREATE TABLE `propietarios` (
+  `id_propietario` int(11) NOT NULL AUTO_INCREMENT,
   `id_persona` int(11) NOT NULL,
   `id_mascota` int(11) NOT NULL,
-  PRIMARY KEY (`id_persona`,`id_mascota`),
+  `fechaRegistro` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_propietario`,`id_persona`,`id_mascota`),
+  KEY `id_persona` (`id_persona`),
   KEY `id_mascota` (`id_mascota`),
-  CONSTRAINT `propietario_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id_persona`),
-  CONSTRAINT `propietario_ibfk_2` FOREIGN KEY (`id_mascota`) REFERENCES `mascota` (`id_mascota`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  CONSTRAINT `propietarios_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id_persona`),
+  CONSTRAINT `propietarios_ibfk_2` FOREIGN KEY (`id_mascota`) REFERENCES `mascotas` (`id_mascota`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `propietario`
+-- Table structure for table `veterinarios`
 --
 
-LOCK TABLES `propietario` WRITE;
-/*!40000 ALTER TABLE `propietario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `propietario` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `veterinario`
---
-
-DROP TABLE IF EXISTS `veterinario`;
+DROP TABLE IF EXISTS `veterinarios`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `veterinario` (
+CREATE TABLE `veterinarios` (
+  `id_veterinario` int(11) NOT NULL AUTO_INCREMENT,
   `id_persona` int(11) NOT NULL,
   `especialidad` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`id_persona`),
-  CONSTRAINT `veterinario_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `persona` (`id_persona`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `fechaRegistro` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id_veterinario`,`id_persona`),
+  KEY `veterinarios_ibfk_1` (`id_persona`),
+  CONSTRAINT `veterinarios_ibfk_1` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id_persona`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `veterinario`
---
-
-LOCK TABLES `veterinario` WRITE;
-/*!40000 ALTER TABLE `veterinario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `veterinario` ENABLE KEYS */;
-UNLOCK TABLES;
 
 --
 -- Dumping events for database 'petclinic'
@@ -197,4 +155,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-04-19 19:18:53
+-- Dump completed on 2021-05-06  0:32:36
