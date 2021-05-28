@@ -11,8 +11,6 @@
             <th style="width:90px;">Especie</th>
             <th style="width:120px;">Fecha visita</th>
             <th style="width:300px;">Descripcion</th>
-            <th style="width:60px;"></th>
-            <th style="width:60px;"></th>
         </tr>
     </thead>
     <tbody>

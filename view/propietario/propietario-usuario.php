@@ -10,7 +10,6 @@
             <th style="width:200px;">Nombre mascota</th>
             <th style="width:160px;">Tipo</th>
             <th style="width:160px;">Especie</th>
-            <th style="width:60px;"></th>
         </tr>
     </thead>
     <tbody>
