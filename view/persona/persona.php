@@ -1,3 +1,22 @@
+<?php
+if(!empty($_SESSION["userId"])) {
+    switch($_SESSION["rol"]){
+        case 1:
+       
+        break;
+
+        case 2:
+        
+        break;
+
+        default:
+        echo "Algo salio mal...";
+    }
+} else {
+    require_once './view/login-form.php';
+}
+?>
+
 <h1 class="page-header">Personas</h1>
 
 <div class="well well-sm text-right">

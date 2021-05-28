@@ -5,9 +5,9 @@ class Veterinario
 
 	public $id_veterinario;
 	public $id_persona;
-	#public $nombre;
-	#public $apellido;
-	#public $email;
+	public $nombre;
+	public $apellido;
+	public $email;
 	public $especialidad;
 	public $fechaRegistro;
 

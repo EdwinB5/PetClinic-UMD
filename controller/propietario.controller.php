@@ -38,11 +38,11 @@ class PropietarioController{
             ? $this->model->Actualizar($var)
             : $this->model->Registrar($var);
         
-        header('Location: index_3.php');
+        header('Location: propietario.php');
     }
     
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['id_propietario']);
-        header('Location: index_3.php');
+        header('Location: propietario.php');
     }
 }

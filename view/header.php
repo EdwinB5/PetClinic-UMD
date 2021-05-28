@@ -32,13 +32,14 @@
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Entidades <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="index.php">Personas</a></li>
-                    <li><a href="index_1.php">Veterinarios</a></li>
-                    <li><a href="index_2.php">Mascotas</a></li>
-                    <li><a href="index_3.php">Propietarios</a></li>
-                    <li><a href="index_4.php">Historial</a></li>
+                    <li><a href="persona.php">Personas</a></li>
+                    <li><a href="veterinario.php">Veterinarios</a></li>
+                    <li><a href="mascota.php">Mascotas</a></li>
+                    <li><a href="propietario.php">Propietarios</a></li>
+                    <li><a href="historial.php">Historial</a></li>
                   </ul>
                 </li>
+                <li><a href="./logout.php">Salir</a></li>
               </ul>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->

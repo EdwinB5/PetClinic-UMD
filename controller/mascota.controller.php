@@ -41,11 +41,11 @@ class MascotaController{
             ? $this->model->Actualizar($var)
             : $this->model->Registrar($var);
         
-        header('Location: index_2.php');
+        header('Location: mascota.php');
     }
     
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['id_mascota']);
-        header('Location: index_2.php');
+        header('Location: mascota.php');
     }
 }

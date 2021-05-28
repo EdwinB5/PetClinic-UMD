@@ -44,11 +44,11 @@ class PersonaController{
             ? $this->model->Actualizar($var)
             : $this->model->Registrar($var);
         
-        header('Location: index.php');
+        header('Location: persona.php');
     }
     
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['id_persona']);
-        header('Location: index.php');
+        header('Location: persona.php');
     }
 }

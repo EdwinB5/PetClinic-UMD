@@ -38,11 +38,11 @@ class VeterinarioController{
             ? $this->model->Actualizar($var)
             : $this->model->Registrar($var);
         
-        header('Location: index_1.php');
+        header('Location: veterinario.php');
     }
     
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['id_veterinario']);
-        header('Location: index_1.php');
+        header('Location: veterinario.php');
     }
 }

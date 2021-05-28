@@ -40,11 +40,11 @@ class Historial_visitaController{
             ? $this->model->Actualizar($var)
             : $this->model->Registrar($var);
         
-        header('Location: index_4.php');
+        header('Location: historial.php');
     }
     
     public function Eliminar(){
         $this->model->Eliminar($_REQUEST['id_visita']);
-        header('Location: index_4.php');
+        header('Location: historial.php');
     }
 }
