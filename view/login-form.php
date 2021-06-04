@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>User Login</title>
+<title>User login</title>
 <link href="./view/css/style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
